@@ -1,0 +1,29 @@
+<%# <form action = "/blogs" accept-charset = "UTF-8" data-remote = "true" method = "post">
+<input name = "utf8" type = "hidden" value = "✓">
+<input type = "hidden" name = "authenticity_token" value = "qbu8RFLhyCuAElg1qr7MLYDEdiEINJdEe1JLQFLr7kyWPFiHCEZKszOrvwON33s9CqGz7njGpBasOzrpYkb8/w==">
+  <div class = "blog_title">
+    <label for = "blog_title">Title</label>
+    <input type = "text" name = "blog[title]">
+  </div>
+  <div class = "blog_content">
+    <label for = "blog_content">Content</label>
+    <input type = "text" name = "blog[content]">
+  </div>
+  <input type = "submit" name = "commit" value = "Create Blog" data-disable-with = "Create Blog">
+</form> %>
+<%# form_withでは、デフォルトではremote: trueになっているため、local: trueを設定してあげる必要があります。
+　
+では、remote: trueとは？
+–> 通信のリクエストがhtml形式ではなくjs形式になるということです。
+js形式になるということは、ページの遷移を行いません。
+　
+反対にlocal: trueとは？
+–> 通信のリクエストがhtml形式になります。これは、普段見慣れているページ遷移が行われるます。
+（普段のページ遷移時はhtml形式のリクエストを送り、htmlファイルを要求しています。） %>
+
+<%# <%= form_with(model: @blog, local: true) do |form| %>
+  
+
+<h2>ブログを作成する</h2>
+
+  <%= render 'form' %>
