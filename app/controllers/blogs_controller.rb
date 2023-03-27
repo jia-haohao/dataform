@@ -5,11 +5,6 @@ class BlogsController < ApplicationController
     # raise
   end
 
-  # def confirm 
-  #   @blog = Blog.new(blog_params)
-  #   render :new if @blog.invalid?
-  # end
-
   def new
     @blog = Blog.new  #ビューにデータを渡す（インスタンス変数を定義する）
   end

@@ -1,7 +1,4 @@
 class ContactsController < ApplicationController
-  def index
-    @contacts = Contact.all
-  end
   
   def new
     @contacts = Contact.all
@@ -13,7 +10,7 @@ class ContactsController < ApplicationController
     if @contact.save
       redirect_to contacts_path, notice: "お問い合わせ受け付けました"
     else
-      render :new
+      redirect_to new_contact_path, notice: "お問い合わせ受け付けました"
     end
   end
 

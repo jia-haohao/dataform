@@ -1,3 +1,5 @@
+<p id = "notice"><%= notice %></p>
+
 <%= form_with(model: @contact, local: true) do |form| %>
   <% if @contact.errors.any? %>
     <div id="error_explanation">
@@ -11,6 +13,7 @@
     </div>
   <% end %>
 
+<h1>お問い合わせ</h1>
   
   <div class="field">
     <%= form.label :name %>
@@ -27,8 +30,27 @@
     <%= form.text_field :content %>
   </div>
 
-  <%= form.submit %>
+   <div class="action">
+      <%= form.submit "送信" %>
+  </div>
 <% end %>
+
+<h2>お問い合わせ一覧</h2>
+<table>
+  <tr>
+    <th>お名前</th>    
+    <th>メールアドレス</th>    
+    <th>お問い合わせ内容</th>
+  </tr>
+
+  <% @contacts.each do |contact| %>
+    <tr>
+      <td><%= contact.name %></td>
+      <td><%= contact.email %></td>
+      <td><%= contact.content %></td>
+    </tr>
+  <% end %>
+</table>
 
 <br><br>
 
