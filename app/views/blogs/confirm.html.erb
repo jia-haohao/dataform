@@ -11,3 +11,8 @@
   <%= form.submit '戻る', name: 'back' %>
 
 <% end %>
+
+<!--form_withを使っているviewファイルではf.hidden_fieldを利用することがほとんどで、
+それ以外ではhidden_field_tagで個別にパラメータに好きな情報を送ることができます。
+form_withやform_forで渡すインスタンスがある場合(もしくはそれらのヘルパーを使っている場合)は、f.hidden_fieldを使います。
+一個だけパラメータを他のアクションへ単体で渡したい時は、hidden_field_tagを使います。-->

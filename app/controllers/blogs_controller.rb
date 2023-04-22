@@ -25,7 +25,7 @@ class BlogsController < ApplicationController
   end
 
   def show
-    # @blog = Blog.find(params[:id])
+    # @blog = Blog.find(params[:id])  idを指定して、詳細画面を取得できます．
   end
   
   def edit

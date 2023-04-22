@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :greetions
   resources :contacts
   resources :blogs do
     collection do
